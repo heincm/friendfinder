@@ -1,0 +1,25 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heincm/friendfinder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heincm/friendfinder/issues"
+  },
+  "homepage": "https://github.com/heincm/friendfinder#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10"
+  }
+}
