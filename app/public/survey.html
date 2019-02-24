@@ -1,13 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Survey</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body>
     <h1>Hello Survey</h1>
+    <div class="container">
+
+
+        <form action="/">
+
+            <div class="form-group">
+                <label for="q1">Your mind is always buzzing with unexplored ideas and plans.
+                </label>
+                <select id="q1" required>
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q2">Your mind is always buzzing with unexplored ideas and plans.
+                </label>
+                <select id="q2">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q3">Your mind is always buzzing with unexplored ideas and plans.
+                </label>
+                <select id="q3">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q4">Your mind is always buzzing with unexplored ideas and plans.
+                </label>
+                <select id="q4">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q5">Your mind is always buzzing with unexplored ideas and plans.
+                </label>
+                <select id="q5">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q6">Your mind is always buzzing with unexplored ideas and plans.
+                </label>
+                <select id="q6">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q7">Your mind is always buzzing with unexplored ideas and plans.
+                </label>
+                <select id="q7">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q8">Your mind is always buzzing with unexplored ideas and plans.
+                </label>
+                <select id="q8">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q9">Your mind is always buzzing with unexplored ideas and plans.
+                </label>
+                <select id="q9">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q10">Your mind is always buzzing with unexplored ideas and plans.
+                </label>
+                <select id="q10">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+        </form>
+        <input type="submit" value="submit" class="btn btn-primary btn-lg btn-block" id="submit">
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+
+
+
+        // Capture the form inputs
+        $("#submit").on("click", function (event) {
+
+            // Create an object for the user"s data
+            var userData = {
+                name: $("#name").val(),
+                photo: $("#photo").val(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            };
+            console.log(userData.scores)
+
+
+            // AJAX post the data to the friends API.
+            $.post("/api/friends", userData, function (data) {
+
+                // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                $("#match-name").text(data.name);
+                $("#match-img").attr("src", data.photo);
+
+                // Show the modal with the best match
+                $("#results-modal").modal("toggle");
+
+            });
+
+        });
+    </script>
+
+    <script>
+
+        //pseudo logic to compare one user's answers to another
+        const log = console.log
+
+        let userOne = [2, 1, 4, 4, 5, 1, 3, 5, 4, 5]
+        let userTwo = [4, 5, 9, 4, 5, 1, 2, 1, 2, 1]
+        let sum = 0;
+
+        function testing(array, otherarray) {
+            for (let i = 0; i < array.length; i++) {
+                sum += Math.abs(array[i] - otherarray[i]);
+            }
+        }
+
+        testing(userOne, userTwo);
+        log("testing sum", sum);
+        log("hello")
+
+
+            // end pseudo logic to compare one user's answers to another
+    </script>
 </body>
 
 </html>
