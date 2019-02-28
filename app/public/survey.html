@@ -8,11 +8,12 @@
     <title>Survey</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/assets/css/style.css">
 </head>
 
 <body>
-    <h1>Hello Survey</h1>
     <div class="container">
+        <img src="http://images2.fanpop.com/image/photos/9400000/Puppy-Love-puppies-9460996-1600-1200.jpg" alt="puppy">
 
 
         <form action="/">
@@ -159,24 +160,22 @@
 
         </form>
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Launch demo modal
-        </button>
-
         <!-- Modal -->
         <div class="modal fade" id="matchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Meet your new best friend!</h5>
+                        <h5 class="modal-title" id="modal">Meet your new best friend!</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div id=match-name></div>
+                        <div id="small">
+                            <img id="match-image">
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -196,9 +195,6 @@
         crossorigin="anonymous"></script>
     <script type="text/javascript">
 
-
-
-
         // Capture the form inputs
         $("form").submit(function (event) {
             // Create an object for the user"s data
@@ -206,7 +202,7 @@
 
             let userData = {
                 name: $("#name").val(),
-                photo: $("#photo").val(),
+                url: $("#imageurl").val(),
                 scores: [
                     $("#q1").val(),
                     $("#q2").val(),
@@ -220,7 +216,6 @@
                     $("#q10").val()
                 ]
             };
-            console.log(userData.scores)
             if (userData.scores.includes("")) {
                 alert("You must complete all fields before submitting")
             } else {
@@ -228,40 +223,18 @@
 
                 // AJAX post the data to the friends API.
                 $.post("/api/friends", userData, function (data) {
-
                     // Grab the result from the AJAX post so that the best match's name and photo are displayed.
                     $("#match-name").text(data.name);
-                    $("#match-img").attr("src", data.photo);
+                    $("#match-image").attr("src", data.url).attr("width", "200px");
 
                     // Show the modal with the best match
                     $("#matchModal").modal("toggle");
 
                 });
+                $.get("/api/friends", function (data) {
+                })
             }
         });
-    </script>
-
-    <script>
-
-        //pseudo logic to compare one user's answers to another
-        const log = console.log
-
-        let userOne = [2, 1, 4, 4, 5, 1, 3, 5, 4, 5]
-        let userTwo = [4, 5, 9, 4, 5, 1, 2, 1, 2, 1]
-        let sum = 0;
-
-        function testing(array, otherarray) {
-            for (let i = 0; i < array.length; i++) {
-                sum += Math.abs(array[i] - otherarray[i]);
-            }
-        }
-
-        testing(userOne, userTwo);
-        log("testing sum", sum);
-        log("hello")
-
-
-            // end pseudo logic to compare one user's answers to another
     </script>
 </body>
 
